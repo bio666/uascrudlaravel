@@ -35,5 +35,5 @@ Route::get('/about', function () {
 
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('hamasafif/{slug}', [PostController::class, 'show']);
+Route::get('hamasafif/{post:slug}', [PostController::class, 'show']);
 
