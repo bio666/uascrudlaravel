@@ -35,24 +35,24 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'legolas@gmail.com',
         //     'password' => bcrypt('12345')
         // ]);
-        // User::factory(5)->create();
+        User::factory(3)->create();
 
-        // Category::create([
-        //     'name' => 'Web programming',
-        //     'slug' => 'web-programming'
-        // ]);
+        Category::create([
+            'name' => 'Web programming',
+            'slug' => 'web-programming'
+        ]);
 
-        // Category::create([
-        //     'name' => 'DDOS Attack',
-        //     'slug' => 'ddos-attack'
-        // ]);
+        Category::create([
+            'name' => 'DDOS Attack',
+            'slug' => 'ddos-attack'
+        ]);
 
-        // Category::create([
-        //     'name' => 'Man In The Middle',
-        //     'slug' => 'man-in-the-middle'
-        // ]);
+        Category::create([
+            'name' => 'Man In The Middle',
+            'slug' => 'man-in-the-middle'
+        ]);
 
-        Post::factory(5)->create();
+        Post::factory(25)->create();
         
         // Post::create([
         //     'title' => 'Judul Pertama',
