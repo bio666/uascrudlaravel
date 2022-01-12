@@ -20,13 +20,15 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        "active" => 'posts'
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
+        "active" => 'posts',
         "nama" => "Afif",
         "email" => "cyberhamas@gmail.com",
         "image" => "foto.jpg"
@@ -39,17 +41,26 @@ Route::get('/about', function () {
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('hamasafif/{post:slug}', [PostController::class, 'show']);
 
+Route::get('/categories', function() {
+    return view('categories', [
+        'title' =>'Post Categories',
+        'active' => 'categories',
+        'categories' => Category::all()
+    ]);
+});
+
 Route::get('/categories/{category:slug}', function(Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name
+    return view('posts', [
+        'title' => "Post by Category : $category->name",
+        'active' => 'categories',
+        'posts' => $category->posts->load('category', 'author')
     ]);
 });
 
 Route::get('/authors/{author:username}', function(User $author) {
     return view('posts', [
-        'title' => 'User Posts',
-        'posts' => $author->post,
+        'title' => "Post By Author : $author->name",
+        'active' => 'categories',
+        'posts' => $author->post->load('category', 'author')
     ]);
 });

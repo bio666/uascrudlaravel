@@ -43,13 +43,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'DDOS Attack',
-            'slug' => 'ddos-attack'
+            'name' => 'Gaming PC',
+            'slug' => 'gaming-pc'
         ]);
 
         Category::create([
-            'name' => 'Man In The Middle',
-            'slug' => 'man-in-the-middle'
+            'name' => 'Technology',
+            'slug' => 'technology'
         ]);
 
         Post::factory(25)->create();
