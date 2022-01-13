@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'legolas@gmail.com',
         //     'password' => bcrypt('12345')
         // ]);
-        User::factory(3)->create();
+        User::factory(5)->create();
 
         Category::create([
             'name' => 'Web programming',
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'technology'
         ]);
 
-        Post::factory(25)->create();
+        Post::factory(40)->create();
         
         // Post::create([
         //     'title' => 'Judul Pertama',
