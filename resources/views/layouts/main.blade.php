@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <title>CRUD Laravel | {{ $title }}</title>
+>
   </head>
   <body>
 

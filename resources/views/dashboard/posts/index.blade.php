@@ -7,6 +7,7 @@
     </div> 
 
     <div class="table-responsive col-lg-8">
+        <a href="/dashboard/posts/create" class="btn btn-primary mb-3" >Create New Post</a>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -28,7 +29,7 @@
                     </a>
                     <a href=""class="badge bg-warning"><span data-feather="edit"></span>
                     </a>
-                    <a href=""class="badge bg-danger"><span data-feather="x-circles"></span>
+                    <a href=""class="badge bg-danger"><span data-feather="x-circle"></span>
                     </a>
 
                 </td>
