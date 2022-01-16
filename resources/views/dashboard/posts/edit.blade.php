@@ -6,7 +6,6 @@
     <h1 class="h2">Edit Post</h1>
     </div> 
 <div class="col-lg-8">
-    
 
         <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="mb-5" >
             @method('put')

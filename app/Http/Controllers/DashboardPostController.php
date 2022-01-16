@@ -29,8 +29,6 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        // code yang disini udah sesuai sama yg video ?
-        //udah
         return view('dashboard.posts.create', [
             'categories' => Category::all()
         ]);
@@ -44,12 +42,18 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
+
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-image');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
@@ -70,7 +74,7 @@ class DashboardPostController extends Controller
         return view('dashboard.posts.show', [
             'post' => $post
         ]);
-    } 
+    }  
 
     /**
      * Show the form for editing the specified resource.

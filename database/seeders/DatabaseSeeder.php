@@ -18,11 +18,12 @@ class DatabaseSeeder extends Seeder
     {
        
 
-        // User::create([
-        //     'name' => 'Hamas Afif Aswari',
-        //     'email' => 'cyberhamas@gmail.com',
-        //     'password' => bcrypt('12345')
-        // ]);
+        User::create([
+            'name' => 'Hamas Afif Aswari',
+            'username' => 'hamasafif',
+            'email' => 'cyberhamas@gmail.com',
+            'password' => bcrypt('password')
+        ]);
 
         // User::create([
         //     'name' => 'Svet Lana',
@@ -50,6 +51,18 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Technology',
             'slug' => 'technology'
+        ]);
+        Category::create([
+            'name' => 'Internet',
+            'slug' => 'internet'
+        ]);
+        Category::create([
+            'name' => 'Internet Of Thing',
+            'slug' => 'internet-of-thing'
+        ]);
+        Category::create([
+            'name' => 'PC Game',
+            'slug' => 'pcgame'
         ]);
 
         Post::factory(40)->create();
