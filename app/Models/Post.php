@@ -10,8 +10,10 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $fillable = ['title', 'excerpt', 'body'];
-    // protected $guarded = ['id'];
+    // jadi post model ini untuk ngasi akses field apa aja yang harus diisi
+
+    // protected $fillable = ['title', 'excerpt', 'body'];
+    protected $guarded = ['id'];
     protected $with = ['category', 'author'];
 
     public function scopeFilter($query, array $filters)
