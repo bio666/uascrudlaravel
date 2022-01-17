@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="background-color: #1ABC9C !important">
     <div class="container">
       <a class="navbar-brand" href="/">HAMAS BLOG | CRUD Laravel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,9 +9,17 @@
           <li class="nav-item">
             <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" href="/">Home</a>
           </li>
+
+          @auth
           <li class="nav-item">
             <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a>
           </li>
+              @else
+              <li class="nav-item">
+                {{-- <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a> --}}
+              </li>
+          @endauth
+          
           <li class="nav-item">
             <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Blog</a>
           </li>

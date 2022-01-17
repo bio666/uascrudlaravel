@@ -22,7 +22,41 @@ class DatabaseSeeder extends Seeder
             'name' => 'Hamas Afif Aswari',
             'username' => 'hamasafif',
             'email' => 'cyberhamas@gmail.com',
-            'password' => bcrypt('password')
+            'profesi' => 'Full Stack Developer || IT Support',
+            'password' => bcrypt('password'),
+            'is_admin' => 1,
+        ]);
+        User::create([
+            'name' => 'Muhammad Lutfi Edi Kurniawan',
+            'username' => 'lutfi',
+            'email' => 'lutfi@gmail.com',
+            'profesi' => 'Back end developer',
+            'password' => bcrypt('password'),
+            'is_admin' => 0,
+        ]);
+        User::create([
+            'name' => 'Dinda Surya Baskoro',
+            'username' => 'didin',
+            'email' => 'didin@gmail.com',
+            'profesi' => 'Software engineer',
+            'password' => bcrypt('password'),
+            'is_admin' => 0,
+        ]);
+        User::create([
+            'name' => 'Ruslan Rumat Hoda',
+            'username' => 'ruslan',
+            'email' => 'ruslan@gmail.com',
+            'profesi' => 'Web Developer',
+            'password' => bcrypt('password'),
+            'is_admin' => 0,
+        ]);
+        User::create([
+            'name' => 'Atika Yulia',
+            'username' => 'atika',
+            'email' => 'atika@gmail.com',
+            'profesi' => 'Quality assurance engineer',
+            'password' => bcrypt('password'),
+            'is_admin' => 0,
         ]);
 
         // User::create([
@@ -36,7 +70,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'legolas@gmail.com',
         //     'password' => bcrypt('12345')
         // ]);
-        User::factory(5)->create();
+        // User::factory(5)->create();
 
         Category::create([
             'name' => 'Web programming',
@@ -65,7 +99,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'pcgame'
         ]);
 
-        Post::factory(40)->create();
+        // Post::factory(40)->create();
         
         // Post::create([
         //     'title' => 'Judul Pertama',
