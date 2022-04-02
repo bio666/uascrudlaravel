@@ -97,9 +97,9 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'PC Game',
             'slug' => 'pcgame'
-        ]);
+        ]); 
 
-        // Post::factory(40)->create();
+        Post::factory(40)->create();
         
         // Post::create([
         //     'title' => 'Judul Pertama',
